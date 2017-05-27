@@ -50,4 +50,22 @@ public class ThreeSumTest {
 			assertTrue(result.get(i).equals(expectedResult.get(i)));
 		}
 	}
+	
+	@Test
+	public void testThreeSum3() {
+		ThreeSum threeSum = new ThreeSum();
+		int[] nums = {-2,0,0,2,2};
+		List<List<Integer>> result = threeSum.threeSum(nums);
+		List<Integer> subList1 = Arrays.asList(-2,0,2);
+		List<List<Integer>> expectedResult = new ArrayList<List<Integer>>();
+		expectedResult.add(subList1);
+		System.out.println("Result: " + result);
+		System.out.println("Expected: " + expectedResult);
+		
+		assertEquals(expectedResult.size(), result.size());
+		
+		for (int i = 0; i < result.size(); i++) {
+			assertTrue(result.get(i).equals(expectedResult.get(i)));
+		}
+	}
 }
