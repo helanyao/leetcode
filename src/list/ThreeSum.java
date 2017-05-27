@@ -23,34 +23,26 @@ public class ThreeSum {
 		int j = 0;
 		int k = 0;
 		for (int i = 0; i < nums.length - 2; i++) {
-			if (i == 0 || nums[i] > nums[i-1]) {
-				j = i + 1;
-				k = nums.length - 1;
-				
-				while (j < k) {
-					if (nums[i] + nums[j] + nums[k] == 0) {
-						List<Integer> subNums = new ArrayList<Integer>();
-						subNums.add(nums[i]);
-						subNums.add(nums[j]);
-						subNums.add(nums[k]);
-						
-						result.add(subNums);
-						
-						j++;
-						k--;
-						
-						//handle duplicate here
-						while(j < k && nums[j] == nums[j+1]) {
-							j++;
-						}
-						while(j < k && nums[k] == nums[k-1]) {
-							k--;
-						}
-					} else if (nums[i] + nums[j] + nums[k] < 0) {
-						j++;
-					} else {
-						k--;
-					}
+			if (i > 0 && nums[i] == nums[i-1])
+				continue;
+			j = i + 1;
+			k = nums.length - 1;
+			
+			while (j < k) {
+				if (nums[i] + nums[j] + nums[k] == 0) {
+					List<Integer> subNums = new ArrayList<Integer>();
+					subNums.add(nums[i]);
+					subNums.add(nums[j]);
+					subNums.add(nums[k]);
+					
+					result.add(subNums);
+					
+					j++;
+					k--;
+				} else if (nums[i] + nums[j] + nums[k] < 0) {
+					j++;
+				} else {
+					k--;
 				}
 			}
 		}
