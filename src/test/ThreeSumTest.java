@@ -2,7 +2,7 @@ package test;
 
 import static org.junit.Assert.*;
 
-import array.ThreeSum;
+import list.ThreeSum;
 import org.junit.Test;
 
 import java.util.Arrays;
