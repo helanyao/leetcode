@@ -1,9 +1,10 @@
-package test;
+package test.list;
 
 import static org.junit.Assert.*;
 
-import list.ThreeSum;
 import org.junit.Test;
+
+import list.ThreeSum;
 
 import java.util.Arrays;
 import java.util.ArrayList;

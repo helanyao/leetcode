@@ -1,4 +1,4 @@
-package test;
+package test.hash;
 
 import static org.junit.Assert.*;
 
